@@ -71,6 +71,24 @@ const layout = [
       xs: 12,
     },
   },
+  //moostart
+   {
+    intlLabel: {
+      id: getTrad('EditForm.inputToggle.label.admin-confirmation'),
+      defaultMessage: 'Enable admin confirmation',
+    },
+    description: {
+      id: getTrad('EditForm.inputToggle.description.admin-confirmation'),
+      defaultMessage: 'When enabled (ON), new registered users need to be manually confirmed by the admin',
+    },
+    name: 'admin_confirmation',
+    type: 'bool',
+    size: {
+      col: 12,
+      xs: 12,
+    },
+  },
+  //moosend
   {
     intlLabel: {
       id: getTrad('EditForm.inputToggle.label.email-confirmation-redirection'),

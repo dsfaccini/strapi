@@ -332,9 +332,11 @@ module.exports = {
     }
 
     try {
-      if (!settings.email_confirmation) {
+      //moostart
+      if (!settings.email_confirmation && !settings.admin_confirmation) {
+      //moosend
         params.confirmed = true;
-      }
+      } 
 
       const user = await getService('user').add(params);
 

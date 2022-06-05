@@ -29,13 +29,17 @@ const authenticate = async ctx => {
 
       const advancedSettings = await getAdvancedSettings();
 
-      if (advancedSettings.email_confirmation && !user.confirmed) {
-        return { error: 'Invalid credentials' };
+      //moostart
+      if ((advancedSettings.email_confirmation || advancedSettings.admin_confirmation) && !user.confirmed) {
+        // return { error: 'Invalid credentials' };
+        return { error: 'Unconfirmed user' };
       }
 
       if (user.blocked) {
-        return { error: 'Invalid credentials' };
+        // return { error: 'Invalid credentials' };
+        return { error: 'Blocked user' };
       }
+      //moosend
 
       ctx.state.user = user;
 

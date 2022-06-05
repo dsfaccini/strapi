@@ -12,6 +12,7 @@ const handlers = [
           allow_register: false,
           default_role: 'authenticated',
           email_confirmation: false,
+          admin_confirmation: false,
           email_confirmation_redirection: '',
           email_reset_password: 'https://cat-bounce.com/',
           unique_email: false,

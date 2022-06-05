@@ -123,6 +123,7 @@ const initAdvancedOptions = async pluginStore => {
       unique_email: true,
       allow_register: true,
       email_confirmation: false,
+      admin_confirmation: false,
       email_reset_password: null,
       email_confirmation_redirection: null,
       default_role: 'authenticated',

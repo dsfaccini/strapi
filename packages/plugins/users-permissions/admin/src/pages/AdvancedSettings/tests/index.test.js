@@ -1324,6 +1324,83 @@ describe('ADMIN | Pages | Settings | Advanced Settings', () => {
                       </div>
                     </div>
                   </div>
+                  <!--//moostart -->
+                  <div
+                      class=""
+                    >
+                      <div
+                        class="c35"
+                      >
+                        <div
+                          class="c36 c37"
+                          spacing="1"
+                        >
+                          <div
+                            class="c38"
+                          >
+                            <label
+                              class="c39"
+                              for="toggleinput-admin"
+                            >
+                              <div
+                                class="c38"
+                              >
+                                Enable admin confirmation
+                              </div>
+                            </label>
+                          </div>
+                          <label
+                            class="c40"
+                          >
+                            <div
+                              class="c41"
+                            >
+                              Enable admin confirmation
+                            </div>
+                            <div
+                              class="c42 c43"
+                              display="inline-flex"
+                            >
+                              <div
+                                aria-hidden="true"
+                                class="c44 c38 c45"
+                              >
+                                <span
+                                  class="c46"
+                                >
+                                  False
+                                </span>
+                              </div>
+                              <div
+                                aria-hidden="true"
+                                class="c44 c38 c47"
+                              >
+                                <span
+                                  class="c48"
+                                >
+                                  True
+                                </span>
+                              </div>
+                              <input
+                                aria-disabled="false"
+                                class="c49"
+                                id="toggleinput-admin"
+                                name="admin_confirmation"
+                                type="checkbox"
+                              />
+                            </div>
+                          </label>
+                          <p
+                            class="c50"
+                            id="toggleinput-admin-hint"
+                          >
+                            When enabled (ON), new registered users need to be manually confirmed by the admin.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--//moosend -->
                   <div
                     class="c51"
                   >
