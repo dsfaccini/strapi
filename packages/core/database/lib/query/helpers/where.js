@@ -89,10 +89,16 @@ const processAttributeWhere = (attribute, where, operator = '$eq') => {
 };
 
 /**
+ * @typedef   ProcessWhereCtx
+ * @property  {Object}  qb
+ * @property  {Object}  db
+ * @property  {number}  uid
+ */
+
+/**
  * Process where parameter
  * @param {Object} where
- * @param {Object} ctx
- * @param {number} depth
+ * @param {ProcessWhereCtx} ctx
  * @returns {Object}
  */
 const processWhere = (where, ctx) => {
@@ -325,6 +331,7 @@ const applyWhere = (qb, where) => {
     throw new Error('Where must be an array or an object');
   }
 
+  // runs the first time
   if (_.isArray(where)) {
     return qb.where(subQB => where.forEach(subWhere => applyWhere(subQB, subWhere)));
   }
