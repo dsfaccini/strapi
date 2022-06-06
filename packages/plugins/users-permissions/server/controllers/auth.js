@@ -334,19 +334,22 @@ module.exports = {
     try {
       //moostart
       if (!settings.email_confirmation && !settings.admin_confirmation) {
-      //moosend
+        //moosend
         params.confirmed = true;
-      } 
+      }
 
       const user = await getService('user').add(params);
 
       const sanitizedUser = await sanitizeUser(user, ctx);
-
+      let registrationMessage = 'Account created successfully';
       if (settings.email_confirmation) {
         try {
           await getService('user').sendConfirmationEmail(sanitizedUser);
+          registrationMessage += '\nPlease confirm your account using the link sent to your email';
         } catch (err) {
-          throw new ApplicationError(err.message);
+          // throw new ApplicationError(err.message);
+          registrationMessage +=
+            'Your confirmation link got lost in the mail. Please contact our team to confirm your account';
         }
 
         return ctx.send({ user: sanitizedUser });
@@ -356,6 +359,7 @@ module.exports = {
 
       return ctx.send({
         jwt,
+        registrationMessage,
         user: sanitizedUser,
       });
     } catch (err) {
